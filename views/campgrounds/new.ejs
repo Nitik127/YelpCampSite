@@ -1,0 +1,72 @@
+<%- include('../partials/header'); -%>
+
+<h1 class="display-4" style="text-align: center;">
+	Create a New Campground
+</h1>
+<div class="row">
+	<div class="container" style="width: 30%; margin: 25px auto;">
+		<!-- <div class="spinner-border" role="status">
+			<span class="sr-only">Loading...</span>
+		  </div> -->
+		<form action="/campgrounds" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<input class="form-control" type="text" name="campground[name]" placeholder="name" />
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="number" name="campground[price]" placeholder="price" min='0.01'
+					step='100' />
+			</div>
+
+			<!-- <div class="form-group">
+				<input type="file" class="form-control" id="imageurl" name="image"/>
+			</div> -->
+			<div class="form-group">
+				<!-- <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+				</div> -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+					</div>
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" name="image" accept="image/*" id="inputGroupFile02"
+							aria-describedby="inputGroupFileAddon01" required>
+						<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+			<!-- <div class="form-group">
+				<input
+					class="form-control"
+					type="text"
+					name="desc"
+					placeholder="description"
+				/>
+			</div> -->
+
+			<div class="form-group">
+				<div class="input-group-prepend">
+				</div>
+				<textarea class="form-control" type="text" name="campground[description]"
+					placeholder="Describe your experience here" aria-label="With textarea"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary form-control">
+					Submit!
+				</button>
+			</div>
+
+			<a href="/campgrounds">Go Back</a>
+		</form>
+	</div>
+
+
+</div>
+<%- include('../partials/footer'); -%>

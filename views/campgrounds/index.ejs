@@ -1,0 +1,49 @@
+<%- include('../partials/header'); -%>
+
+	<div class="container " style="padding-top:20px;">
+		<% if(currentUser && currentUser.isAdmin==true) {%>
+		<h4>You are an Admin!</h4>
+		<%}%>
+
+		<header class="jumbotron" style="padding-bottom: 5">
+			<h1 class="display-4 ">
+			<img src="https://img.icons8.com/ios/100/000000/camping-tent.png"/>	Welcome To YelpCamp!
+			</h1>
+			<p class="lead ">
+				View our hand-picked campgrounds from all over the world
+			</p>
+			<hr class="my-4 ">
+			<div class="container">
+			<a class="btn btn-primary btn-md " href="/campgrounds/new " role="button ">Add New Campground</a>
+		</div>
+		<form class="form-inline" action="/campgrounds" method="GET" style="padding: 15 15 0 15;">
+			<label class="sr-only" for="inlineFormInputName2">Name</label>
+			<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="search" placeholder="Search Campground ..">
+			<button type="submit" class="btn btn-dark">Submit</button>
+		  </form>
+			  </header>
+		</header>
+
+		<div class="row text-center">
+			<%if(noMatch){ %>
+				<div class="container alert alert-warning" role="alert">
+				<%=noMatch%>
+			</div>
+			<%} %>
+
+			<% campgrounds.forEach(function(campground){ %>
+				<div class="col-4" style="padding:15px;">
+					<div class="card">
+						<img src="<%=campground.image %>" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">
+								<%=campground.name%>
+							</h5>
+							<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+						</div>
+					</div>
+				</div>
+				<%});%>
+		</div>
+</div>
+		<%- include('../partials/footer'); -%>

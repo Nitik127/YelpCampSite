@@ -1,0 +1,74 @@
+<%- include('partials/header'); -%>
+
+
+
+<h1 class="display-4" style="text-align: center;">
+	Register
+</h1>
+
+
+<div class="row">
+	<div class="container" style="width: 30%; margin: 25px auto;">
+		<!-- <form action="register" method="POST">
+			<div class="form-group">
+			<input class="form-control required" type="text" name="username" placeholder="username" required />
+			</div>
+
+			<div class="form-group">
+			<input class="form-control" type="password" name="password" placeholder="password" required/>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" name="adminCode" placeholder="Optional (Admin Code)"/>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary form-control">
+					Register
+				</button>
+			</div> -->
+			<form action="register" method="POST">
+				<div class="form-group">
+					<label for="firstName">First Name</label>
+					<input type="text" class="form-control" id="firstName" name="firstName"aria-describedby="emailHelp">
+				  </div>
+				  <div class="form-group">
+					<label for="lastName">Last Name</label>
+					<input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="emailHelp">
+				  </div>
+				  <div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+				  </div>
+
+				<div class="form-group">
+				  <label for="exampleInputEmail1">Email address</label>
+				  <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+				  <label for="exampleInputPassword1">Password</label>
+				  <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+				</div>
+				
+				<div class="form-group">
+					<label for="avatar">Avatar Link</label>
+					<input type="text" class="form-control" name="avatar" id="avatar" aria-describedby="emailHelp">
+				  </div>
+
+				  <div class="form-group">
+					<label for="adminCode">Admin Code</label>
+					<input type="password" class="form-control" name="adminCode" id="adminCode">
+				  </div>
+
+
+				<div class="form-group form-check">
+				  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+				</div>
+				<button type="submit" class="btn btn-primary">Register</button>
+			  </form>
+			<a href="/campgrounds">Go Back</a>
+		</form>
+	</div>
+</div>
+
+<%- include('partials/footer'); -%>

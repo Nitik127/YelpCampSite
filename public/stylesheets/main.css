@@ -1,0 +1,13 @@
+#delete-form{
+	display:inline;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+  .user-card{
+    float: left;
+   margin-left: 65px; 
+  }
